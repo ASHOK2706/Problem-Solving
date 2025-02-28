@@ -35,10 +35,17 @@ public class _15_FindNthRootOfM {
     }
 
     private static int getNthRootValue(int x, int n) {
-        int val = 1;
-        for(int i=1; i<=n; i++) {
-            val *= x;
+        int ans = 1;
+        while(n > 0) {
+            if (n % 2 == 1) {
+                ans = ans * x;
+                n = n - 1;
+            }
+            else {
+                x = x * x;
+                n = n / 2;
+            }
         }
-        return val;
+        return ans;
     }
 }
