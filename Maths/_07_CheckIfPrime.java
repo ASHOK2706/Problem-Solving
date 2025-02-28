@@ -27,6 +27,7 @@ public class _07_CheckIfPrime {
                     count += 1;
                 }
             }
+            if(count > 2) return false;
         }
         return count == 2;
     }
