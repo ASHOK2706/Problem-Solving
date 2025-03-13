@@ -2,32 +2,36 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class _07_PrintSubSequencesWithSumK {
+public class _08_PrintOneSubsequenceWithSumK {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int[] arr = new int[n];
-        for(int i=0; i<n; i++) {
+        for(int i=0; i<n ;i++) {
             arr[i] = in.nextInt();
         }
         int k = in.nextInt();
         List<Integer> list = new ArrayList<>();
-        printSubsequences(0, list, 0, arr, n, k);
+        printOneSubsequence(0, list, 0, k, arr, n);
         in.close();
     }
 
-    private static void printSubsequences(int i, List<Integer> list, int sum, int[] arr, int n, int k) {
+    private static boolean printOneSubsequence(int i, List<Integer> list, int sum, int k, int[] arr, int n) {
         if(i == n) {
             if(sum == k) {
                 System.out.println(list);
+                return true;
             }
-            return;
+            return false;
         }
         list.add(arr[i]);
         sum += arr[i];
-        printSubsequences(i + 1, list, sum, arr, n, k);
-        list.remove(list.size() - 1);
+        if(printOneSubsequence(i+1, list, sum, k, arr, n) == true) {
+            return true;
+        }
+        list.remove(list.size()-1);
         sum -= arr[i];
-        printSubsequences(i + 1, list, sum, arr, n, k);
+
+        return printOneSubsequence(i+1, list, sum, k, arr, n);
     }
 }
