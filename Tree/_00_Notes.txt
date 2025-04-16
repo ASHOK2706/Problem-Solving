@@ -1,0 +1,49 @@
+Tree :
+-------
+    hierarchical data structor.
+
+Types Of Tree:
+
+    1. Full Binary Tree. 
+        -> every node can have either 0 or 2 children.
+    2. Complete Binary Tree 
+        -> all levels are Completely filled except the last level.
+        -> the last level has all nodes on left as possible .
+
+    3. Perfect Binary Tree.
+        -> all leaf nodes are at same level.
+    4. Balance Binary Tree.
+        -> height of tree at max log(N). N is no of nodes.
+    5. Degenerate Tree.
+        -> every node has a single children 
+
+
+Binary Trre Representation :
+
+
+    class Node {
+        int data;
+        Node left;
+        Node right;
+        Node(int data) {
+            this.data = data
+            left = null;
+            right = null;
+        }
+    }
+
+
+Binary Tree Traversals Techniques (BFS / DFS):
+
+DFS - Depth First Search :
+    1. InOrder Traversal (left, root, right)
+    2. PreOrder Traversal (root, left, right)
+    3. PostOrder Traversal (left, right, root)
+
+BFS - Birth First Search : 
+    1. Level Order Traversal
+
+
+
+
+
