@@ -26,7 +26,7 @@ public class _16_ZigZagTraversal {
         root.right.right = new Node(7);
         root.right.right.left = new Node(9);
         root.right.right.right = new Node(10);
-
+ 
 
         zigZagTraversal(root);
 
